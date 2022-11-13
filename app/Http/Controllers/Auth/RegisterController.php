@@ -51,10 +51,20 @@ class RegisterController extends Controller
         //validate data
         $this->validateForm($request);
 
+        $username = $request->username;
+        
+        // if user already exists
+
+        if (User::where('username', $username)->exists()) {
+            return redirect()->route('register');
+        }else
+        {
         //create user 
         $user = $this->create($request->all());
 
-        
+        //redirect user
+        return redirect()->route('login');
+        }
     }
 
 
