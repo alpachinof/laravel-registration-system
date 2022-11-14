@@ -34,3 +34,8 @@ Route::get('/logout', function () {
     Auth::logout();
     return redirect('login');
 })->middleware('auth')->name('logout');
+
+
+Route::get('dashboard',function(){
+    return view('dashboard');
+})->middleware(['auth','admin']);

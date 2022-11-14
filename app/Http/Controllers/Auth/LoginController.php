@@ -42,6 +42,9 @@ class LoginController extends Controller
         $this->validateForm($request);
 
         if($this->AttemptLogin($request)){
+            if(Auth::user()->role == 1){
+                return redirect('/dashboard');
+            }
             return redirect('');
         }
         return redirect('/login');

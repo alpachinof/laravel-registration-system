@@ -1,5 +1,5 @@
 <html>
     <body>
-        <h1>mamad</h1>
+        <h1>admin panel</h1>
     </body>
 </html>
