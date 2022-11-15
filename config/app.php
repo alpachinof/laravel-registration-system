@@ -82,8 +82,8 @@ return [
     |
     */
 
-    'locale' => 'en',
-
+    'locale' => 'fa',
+    'useAcceptLanguageHeader' => false,
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale

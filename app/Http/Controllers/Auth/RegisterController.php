@@ -56,14 +56,14 @@ class RegisterController extends Controller
         // if user already exists
 
         if (User::where('username', $username)->exists()) {
-            return redirect()->route('register');
+            return redirect()->route('register')->with('userExists', true);
         }else
         {
         //create user 
         $user = $this->create($request->all());
 
         //redirect user
-        return redirect()->route('login');
+        return redirect()->route('login')->with('registered', true);
         }
     }
 

@@ -21,6 +21,7 @@
         </style>
     </head>
     <body class="antialiased">
+        <h1>user panel</h1>
         <a href="{{route('logout')}}">logout</a>
     </body>
 </html>

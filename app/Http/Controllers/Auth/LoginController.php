@@ -43,13 +43,12 @@ class LoginController extends Controller
 
         if($this->AttemptLogin($request)){
             if(Auth::user()->role == 1){
-                return redirect('/dashboard');
+                return redirect('/dashboard')->with('success',true);
             }
-            return redirect('');
+            return redirect('')->with('success',true);
         }
-        return redirect('/login');
+        return redirect('/login')->with('failed', true);
 
-        
     }
 
 
