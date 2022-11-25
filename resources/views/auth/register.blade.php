@@ -1,6 +1,7 @@
 <html>
     <head>
         @vite('resources/css/app.css')
+        <title>ثبت نام</title>
     </head>
     <body dir="rtl">
       @include('alerts')

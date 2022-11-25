@@ -1,6 +1,7 @@
 <html>
     <head>
         @vite('resources/css/app.css')
+        <title>ورود به سیستم اتوماسیون</title>
     </head>
     <body dir="rtl">
       @include('alerts')
@@ -10,11 +11,11 @@
                 class="w-[400px] py-4 border-2 border-gray-200 flex flex-col justify-center items-center rounded-xl"
               >
               @csrf
-                <h1 class="text-4xl text-primary my-8">ورود به حساب کاربری</h1>
-                <input type="number" placeholder="نام کاربری" name="username"
+                <h1 class="text-4xl text-primary my-8">ورود به سیستم</h1>
+                <input type="tel" placeholder="نام کاربری" name="username" maxlength="10" onkeypress="return onlyNumberKey(event)"
                  class="appearance-none border-2 border-gray-200 rounded-xl w-11/12 py-2 px-4 my-8 mx-4 placeholder:text-gray-500 leading-[40px] focus:outline-none focus:border-cyan-400"
                 />
-                <input type="password" placeholder="رمز عبور" name="password"
+                <input type="password" placeholder="رمز عبور" name="password" onkeypress="return onlyNumberKey(event)"
                  class="appearance-none border-2 border-gray-200 rounded-xl w-11/12 py-2 px-4 my-8 mx-4 placeholder:text-gray-500 leading-[40px] focus:outline-none focus:border-cyan-400"
                 />
                 @if ($errors->any())
@@ -32,3 +33,16 @@
 
     </body>
 </html>
+
+
+<script>
+  
+  function onlyNumberKey(evt) {
+        
+      // Only ASCII character in that range allowed
+      var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+      if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+          return false;
+      return true;
+  }
+</script>
