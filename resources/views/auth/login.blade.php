@@ -15,9 +15,12 @@
                 <input type="tel" placeholder="نام کاربری" name="username" maxlength="10" onkeypress="return onlyNumberKey(event)"
                  class="appearance-none border-2 border-gray-200 rounded-xl w-11/12 py-2 px-4 my-8 mx-4 placeholder:text-gray-500 leading-[40px] focus:outline-none focus:border-cyan-400"
                 />
-                <input type="password" placeholder="رمز عبور" name="password" onkeypress="return onlyNumberKey(event)"
+                <div class="w-full">
+                <input type="password" placeholder="رمز عبور" name="password" id="password" onkeypress="return onlyNumberKey(event)"
                  class="appearance-none border-2 border-gray-200 rounded-xl w-11/12 py-2 px-4 my-8 mx-4 placeholder:text-gray-500 leading-[40px] focus:outline-none focus:border-cyan-400"
                 />
+                <span onclick="showHidePass()" class="cursor-pointer relative z-50 float-left -mt-[67px] ml-8"><i id="eye" class="fa-solid fa-eye"></i><i id="eyeslash" class="hidden fa-solid fa-eye-slash"></i></span>
+                </div>
                 @if ($errors->any())
                     @foreach ($errors->all() as $error)
                         <div class="text-red-400">{{$error}}</div>
@@ -45,4 +48,23 @@
           return false;
       return true;
   }
+
+  function showHidePass() {
+  var x = document.getElementById("password");
+  var eye = document.getElementById("eye");
+  var eyeslash = document.getElementById("eyeslash");
+
+
+  if (x.type === "password") {
+    x.type = "text";
+    eye.classList.add("hidden");
+    eyeslash.classList.remove("hidden");
+    eyeslash.classList.add("visible");
+  } else {
+    x.type = "password";
+    eye.classList.remove("hidden");
+    eye.classList.add("visible");
+    eyeslash.classList.add("hidden");
+  }
+}
 </script>
