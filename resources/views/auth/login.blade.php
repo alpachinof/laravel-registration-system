@@ -2,13 +2,19 @@
     <head>
         @vite('resources/css/app.css')
         <title>ورود به سیستم اتوماسیون</title>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+        />
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     </head>
     <body dir="rtl">
       @include('alerts')
-        <div class="mt-16">
+        <div class="flex h-full max-w-full grow-0">
             <div class="mt-16 flex justify-center items-center">
               <form method="POST" action="{{route('login')}}"
-                class="w-[400px] py-4 border-2 border-gray-200 flex flex-col justify-center items-center rounded-xl"
+                class="w-[450px] py-4 flex flex-col justify-center items-center rounded-xl"
               >
               @csrf
                 <h1 class="text-4xl text-primary my-8">ورود به سیستم</h1>
@@ -31,6 +37,24 @@
 
               </form>
             </div>
+
+              <div class="swiper invisible lg:visible">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                  <!-- Slides -->
+                  <div class="swiper-slide bg-red-400">
+                    <img class="bg-contain min-h-screen" src="{{ asset('1.jpg') }}">
+                  </div>
+                  <div class="swiper-slide bg-green-400">
+                    <img class="bg-contain min-h-screen" src="{{ asset('2.jpg') }}">
+                  </div>
+                  <div class="swiper-slide bg-cyan-400">
+                    <img class="bg-contain min-h-screen" src="{{ asset('3.jpg') }}">
+                  </div>
+                  ...
+                </div>
+              </div>
+
           </div> 
 
 
@@ -39,7 +63,17 @@
 
 
 <script>
-  
+
+var swiper = new Swiper(".swiper", {
+        spaceBetween: 0,
+        centeredSlides: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+      });
+
+
   function onlyNumberKey(evt) {
         
       // Only ASCII character in that range allowed
