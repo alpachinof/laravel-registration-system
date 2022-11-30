@@ -4,13 +4,21 @@
     >
       <div class="text-gray-100 text-xl">
         <div>
-          <router-link to="/">
+          <div class="flex items-center p-4 rounded-md">
+            <div class="w-14 h-14 rounded-full bg-cyan-400">
+              <img class="w-full h-full rounded-full" src="https://preview.redd.it/v0caqchbtn741.jpg?auto=webp&s=c5d05662a039c031f50032e22a7c77dfcf1bfddc">
+            </div>
+            <div class="flex flex-col items-start px-4">
+            <span class="text-xl">محمد چهکندی</span>
+            <span class="text-sm">کاربر سیستمی</span>
+            </div>
+          </div>
+          
             <div
               class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600"
             >
               <span class="text-[18px] ml-4 text-gray-200">داشبورد</span>
             </div>
-          </router-link>
 
           <div class="text-right">
             <div id="title">
