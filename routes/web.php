@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\employee;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,3 +41,9 @@ Route::get('/logout', function () {
 Route::get('dashboard',function(){
     return view('dashboard');
 })->middleware(['auth','admin']);
+
+
+Route::prefix('employee')->controller(employee::class)->group(function () {
+    Route::get('/registerinfo', 'registerInfo');
+    Route::get('/all', 'employeeList');
+});

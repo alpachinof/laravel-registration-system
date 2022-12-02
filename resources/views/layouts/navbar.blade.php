@@ -34,8 +34,8 @@
             <div class="menu hidden flex flex-col items-start rounded-md px-4 duration-300 cursor-pointer">
               <div class="w-full py-1">
                 <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-                <a href="#" class="block py-2 w-full rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-0">ثبت اطلاعات کارمندی</a>
-                <a href="#" class="block py-2 w-full rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-1">اطلاعات کارمندان</a>
+                <a href="/employee/registerinfo" class="block py-2 w-full rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-0">ثبت اطلاعات کارمندی</a>
+                <a href="/employee/all" class="block py-2 w-full rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-1">اطلاعات کارمندان</a>
               </div>
             </div>
           </div>
@@ -101,7 +101,7 @@
         </div>
       </div>
     </div>
-    <div class="mr-96">
+    <div class="lg:mr-96">
     @yield('content')
     </div>
   </div>
