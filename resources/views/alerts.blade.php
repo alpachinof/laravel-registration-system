@@ -16,3 +16,10 @@
 </div>
 @endif
 
+@if (session()->has('userExists'))
+<div class="text-center text-green-500">
+    نام کاربری در سیستم موجود است
+</div>
+@endif
+
+

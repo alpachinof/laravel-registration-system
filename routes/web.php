@@ -44,6 +44,7 @@ Route::get('dashboard',function(){
 
 
 Route::prefix('employee')->controller(employee::class)->group(function () {
-    Route::get('/registerinfo', 'registerInfo');
+    Route::get('/registerinfo', 'registerInfo')->name('registerinfo');
+    Route::post('/registerinfo', 'registerInformation')->name('registerinformation');
     Route::get('/all', 'employeeList');
 });
