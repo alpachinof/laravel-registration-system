@@ -43,8 +43,11 @@ Route::get('dashboard',function(){
 })->middleware(['auth','admin']);
 
 
-Route::prefix('employee')->controller(employee::class)->group(function () {
+Route::middleware('auth')->prefix('employee')->controller(employee::class)->group(function () {
     Route::get('/registerinfo', 'registerInfo')->name('registerinfo');
     Route::post('/registerinfo', 'registerInformation')->name('registerinformation');
-    Route::get('/all', 'employeeList');
+    Route::get('/', 'index');
+    Route::get('/{id}', 'edit');
+    Route::post('/{id}', 'update')->name('employeeUpdate');
+
 });
