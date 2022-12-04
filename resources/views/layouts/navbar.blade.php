@@ -115,7 +115,7 @@
 
   <script>
     const title = document.querySelectorAll('[id=title]');
-    const menu = document.querySelectorAll(".menu");;
+    const menu = document.querySelectorAll(".menu");
 
 
     title.forEach((title, index) => {

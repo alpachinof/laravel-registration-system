@@ -48,6 +48,6 @@ Route::middleware('auth')->prefix('employee')->controller(employee::class)->grou
     Route::post('/registerinfo', 'registerInformation')->name('registerinformation');
     Route::get('/', 'index');
     Route::get('/{id}', 'edit');
-    Route::post('/{id}', 'update')->name('employeeUpdate');
+    Route::get('/delete/{id}', 'delete')->name('delete');
 
 });

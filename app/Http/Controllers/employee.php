@@ -39,6 +39,11 @@ class employee extends Controller
 
         return redirect('employee');
     }
+
+    public function delete(Request $request, $id){
+        DB::table('users')->where('id', '=', $id)->delete();
+        return redirect('employee');
+    }
     
 
 
