@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\employee;
+use App\Http\Controllers\panel;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +18,8 @@ use App\Http\Controllers\employee;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::controller(panel::class)->group(function () {
+    Route::get('/', 'index');
 })->middleware('auth');
 
  

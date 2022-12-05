@@ -10,10 +10,28 @@
 
         @vite('resources/css/app.css')
     </head>
-    <body class="antialiased">
+    <body>
         @include('alerts')
-        <h1 class="text-4xl">user panel</h1>
-        <a href="{{route('logout')}}">logout</a>
+        <div class="mt-16 flex flex-wrap gap-4 w-full text-center">
+            <div class="w-64 h-32 bg-red-400 p-4">
+                <h1>کاربران ثبت نام</h1>
+                
+                <span>{{$registerusers}}</span>
+            </div>
+            <div class="w-64 h-32 bg-red-400 p-4">
+                <h1>کاربران اداری</h1>
+                <span>{{$officeusers}}</span>
+            </div>
+            <div class="w-64 h-32 bg-red-400 p-4">
+                <h1>کاربران مدیر</h1>
+                <span>{{$admins}}</span>
+            </div>
+            <div class="w-64 h-32 bg-red-400 p-4">
+                <h1>دانشجویان</h1>
+                <span>4700</span>
+            </div>
+
+        </div>
     </body>
 </html>
 @endsection

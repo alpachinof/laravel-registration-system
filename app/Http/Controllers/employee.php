@@ -14,7 +14,8 @@ class employee extends Controller
     }
 
     public function index(){
-        $infos = user_info::all();
+        // $infos = user_info::all();
+        $infos = user_info::search(request('search'))->paginate();
         return view('employee.list', compact('infos'));
     }
 

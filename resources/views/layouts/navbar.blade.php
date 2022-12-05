@@ -9,16 +9,18 @@
               <img class="w-full h-full rounded-full" src="https://preview.redd.it/v0caqchbtn741.jpg?auto=webp&s=c5d05662a039c031f50032e22a7c77dfcf1bfddc">
             </div>
             <div class="flex flex-col items-start px-4">
-            <span class="text-xl"> چهکندی</span>
+            <span class="text-xl"> محمد چهکندی</span>
             <span class="text-sm">کاربر سیستمی</span>
             </div>
           </div>
           
+            <a href="/">
             <div
               class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600"
             >
               <span class="text-[18px] ml-4 text-gray-200">داشبورد</span>
             </div>
+            </a>
 
           <div class="text-right">
             <div id="title">
@@ -35,7 +37,7 @@
               <div class="w-full py-1">
                 <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
                 <a href="/employee/registerinfo" class="block py-2 w-full rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-0">ثبت اطلاعات کارمندی</a>
-                <a href="/employee" class="block py-2 w-full rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-1">اطلاعات کارمندان</a>
+                <a href="/employee" class="block py-2 w-full rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-1">لیست کارمندان</a>
               </div>
             </div>
           </div>
