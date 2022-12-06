@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class employee extends Controller
 {
@@ -50,6 +51,8 @@ class employee extends Controller
 
     public function registerInformation(Request $request){
 
+        $this->validateForm($request);
+
         $user = Auth::User();
         if (! $user->info()->where('user_id', $user->id)->exists()){
             user_info::create([
@@ -60,12 +63,30 @@ class employee extends Controller
             'birthplace' => $request['birthplace'],
             'degree' => $request['degree'],
             'address' => $request['address'],
-            'profile_pic' => $request['profile_pic'],
+            'profile_pic' => $request->user()->id,
         ]);
+
+        $path = $request->file('profile_pic')->storeAs(
+            'public/avatars', $request->user()->id
+        );
+
         return redirect()->route('registerinfo')->with('registered', true);
         }
         else{
             return redirect()->route('registerinfo')->with('failed', true);
         }
+
+    }
+
+    protected function validateForm(Request $request){
+        $request->validate([
+            'firstname' => ['required'],
+            'lastname' => ['required'],
+            'birthdate' => ['required'],
+            'birthplace' => ['required'],
+            'degree' => ['required'],
+            'address' => ['required'],
+            'profile_pic' => ['mimes:jpeg,png,jpg,svg','required'],
+        ]);
     }
 }

@@ -18,9 +18,9 @@ use App\Http\Controllers\panel;
 |
 */
 
-Route::controller(panel::class)->group(function () {
+Route::middleware('auth')->controller(panel::class)->group(function () {
     Route::get('/', 'index');
-})->middleware('auth');
+});
 
  
 Route::controller(RegisterController::class)->group(function () {

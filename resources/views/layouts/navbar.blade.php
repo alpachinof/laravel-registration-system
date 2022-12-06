@@ -6,11 +6,19 @@
         <div>
           <div class="flex items-center p-4 rounded-md">
             <div class="w-14 h-14 rounded-full bg-cyan-400">
-              <img class="w-full h-full rounded-full" src="https://preview.redd.it/v0caqchbtn741.jpg?auto=webp&s=c5d05662a039c031f50032e22a7c77dfcf1bfddc">
+              <img class="w-full h-full bg-center rounded-full" src="{{ url('storage/avatars/' . Auth::user()->id )}}">
             </div>
             <div class="flex flex-col items-start px-4">
-            <span class="text-xl"> محمد چهکندی</span>
-            <span class="text-sm">کاربر سیستمی</span>
+            <span class="text-xl">{{ Auth::user()->info?->firstname }} {{ Auth::user()->info?->lastname}}</span>
+            <span class="text-sm">
+              @if (Auth::user()->role == 1)
+                  کاربر مدیر
+              @elseif (Auth::user()->role == 2)
+                  کاربر اداری
+              @else
+                  کاربر ثبت نام
+              @endif
+            </span>
             </div>
           </div>
           

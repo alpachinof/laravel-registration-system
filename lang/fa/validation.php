@@ -18,6 +18,8 @@ return [
     ],
     'digits' => ':attribute باید :digits رقم باشد.',
     'numeric' => ':attribute باید به صورت عددی باشد.',
+    'mimes' => ':attribute باید از انواع زیر باشد :values.',
+    'mimetypes' => ':attribute باید از انواع زیر باشد :values.',
 
 
     'attributes' => [
@@ -31,7 +33,13 @@ return [
         'password_confirmation' => 'تایید کلمه عبور',
         'password' => 'کلمه عبور',
         'token' => 'توکن',
-        'code' => 'کد'
+        'code' => 'کد',
+        'firstname' => 'نام',
+        'lastname' => 'نام خانوادگی',
+        'birthdate' => 'تاریخ تولد',
+        'birthplace' => 'محل تولد',
+        'address' => 'آدرس',
+        'profile_pic' => 'آواتار',
 
     ]
 ];

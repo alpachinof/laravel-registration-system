@@ -14,7 +14,7 @@
 <body dir="rtl">
   @include('alerts')
     <div class="mt-16">
-            <form action="{{route('registerinformation')}}" method="POST">
+            <form action="{{route('registerinformation')}}" enctype="multipart/form-data" method="POST">
               @csrf
               <div class="overflow-hidden shadow sm:rounded-md">
                 <div class="bg-white px-4 py-5 sm:p-6">
@@ -60,6 +60,11 @@
                       <input type="file" name="profile_pic" id="profile_pic" class="block w-full text-sm text-slate-500 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-violet-50 file:text-violet-700 hover:file:bg-violet-100">
                     </div>
                   </div>
+                  @if ($errors->any())
+                  @foreach ($errors->all() as $error)
+                      <div class="text-red-400">{{$error}}</div>
+                  @endforeach
+                  @endif
                 </div>
                 <div class="bg-gray-50 px-4 py-3 text-right sm:px-6">
                   <button type="submit" class="inline-flex justify-center rounded-md border-2 border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">ذخیره</button>
