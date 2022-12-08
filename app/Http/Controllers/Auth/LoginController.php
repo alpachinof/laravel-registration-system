@@ -47,7 +47,7 @@ class LoginController extends Controller
             }
             return redirect('')->with('success',true);
         }
-        return redirect('/login')->with('failed', true);
+        return redirect('/login')->with('WrongCredential', true);
 
     }
 

@@ -46,10 +46,11 @@ Route::get('dashboard',function(){
 
 
 Route::middleware('auth')->prefix('employee')->controller(employee::class)->group(function () {
-    Route::get('/registerinfo', 'registerInfo')->name('registerinfo');
-    Route::post('/registerinfo', 'registerInformation')->name('registerinformation');
     Route::get('/', 'index');
+    Route::get('/create', 'create')->name('create');
+    Route::post('/store', 'store')->name('store');
     Route::get('/{id}', 'edit');
+    Route::post('/{id}', 'update');
     Route::get('/delete/{id}', 'delete')->name('delete');
 
 });

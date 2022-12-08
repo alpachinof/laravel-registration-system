@@ -10,8 +10,8 @@ use Illuminate\Support\Facades\Storage;
 
 class employee extends Controller
 {
-    public function registerInfo(){
-        return view('employee.registerInfo');
+    public function create(){
+        return view('employee.create');
     }
 
     public function index(){
@@ -37,19 +37,22 @@ class employee extends Controller
                 'degree' => $request['degree'],
                 'address' => $request['address'],
                 'profile_pic' => $request['profile_pic'],
+
+            //todo 
+            //update user image and reupload
         ]);
 
-        return redirect('employee');
+        return redirect('/employee')->with('updated', true);
     }
 
     public function delete(Request $request, $id){
         DB::table('users')->where('id', '=', $id)->delete();
-        return redirect('employee');
+        return redirect('/employee')->with('deleted', true);
     }
     
 
 
-    public function registerInformation(Request $request){
+    public function store(Request $request){
 
         $this->validateForm($request);
 
@@ -70,10 +73,13 @@ class employee extends Controller
             'public/avatars', $request->user()->id
         );
 
-        return redirect()->route('registerinfo')->with('registered', true);
+        return redirect()->route('create')->with('created', true);
         }
         else{
-            return redirect()->route('registerinfo')->with('failed', true);
+
+            //todo 
+            //update user info 
+            return redirect()->route('create')->with('updated', true);
         }
 
     }

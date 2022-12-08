@@ -10,6 +10,7 @@
 
 @section('content')
 <body>
+    @include('alerts')
 <div class="mt-16 overflow-x-auto relative shadow-md sm:rounded-lg">
     <form>   
         <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
@@ -82,12 +83,7 @@ deletebtn.forEach((deletebtn, index) => {
             confirmButtonText: 'حذف'
             }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`/employee/delete/${id}`)
-                Swal.fire(
-                'حذف شد',
-                'کارمند از سیستم حذف شد',
-                'success'
-                )
+                fetch(`/employee/delete/${id}`);
                 location.reload();
             }
             })

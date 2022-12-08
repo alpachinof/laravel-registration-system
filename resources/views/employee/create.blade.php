@@ -14,7 +14,7 @@
 <body dir="rtl">
   @include('alerts')
     <div class="mt-16">
-            <form action="{{route('registerinformation')}}" enctype="multipart/form-data" method="POST">
+            <form action="{{route('store')}}" enctype="multipart/form-data" method="POST">
               @csrf
               <div class="overflow-hidden shadow sm:rounded-md">
                 <div class="bg-white px-4 py-5 sm:p-6">
