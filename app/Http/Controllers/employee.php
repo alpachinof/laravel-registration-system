@@ -26,7 +26,7 @@ class employee extends Controller
     }
 
     public function update(Request $request, $id){
-
+        $user_id = DB::table('user_infos')->where('id', $id)->first()->user_id;
         DB::table('user_infos')
             ->where('id', $id)
             ->update([
@@ -36,11 +36,19 @@ class employee extends Controller
                 'birthplace' => $request['birthplace'],
                 'degree' => $request['degree'],
                 'address' => $request['address'],
-                'profile_pic' => $request['profile_pic'],
+                'profile_pic' => $user_id,
 
-            //todo 
-            //update user image and reupload
         ]);
+
+        if($request->hasFile('profile_pic')){
+            //delete old photo
+            Storage::delete('public/avatars/' . $user_id);
+
+            //upload new photo
+            $path = $request->file('profile_pic')->storeAs(
+                'public/avatars', $user_id
+            );
+        }
 
         return redirect('/employee')->with('updated', true);
     }
@@ -77,8 +85,30 @@ class employee extends Controller
         }
         else{
 
-            //todo 
-            //update user info 
+            DB::table('user_infos')
+            ->where('user_id', Auth::user()->id)
+            ->update([
+                'firstname' => $request['firstname'],
+                'lastname' => $request['lastname'],
+                'birthdate' => $request['birthdate'],
+                'birthplace' => $request['birthplace'],
+                'degree' => $request['degree'],
+                'address' => $request['address'],
+                'profile_pic' => $request->user()->id,
+        ]);
+
+        if($request->hasFile('profile_pic')){
+            
+            //delete old photo
+            Storage::delete('public/avatars/'. Auth::user()->id);
+
+            //upload new photo
+            $path = $request->file('profile_pic')->storeAs(
+                'public/avatars', $request->user()->id
+            );
+        }
+
+        
             return redirect()->route('create')->with('updated', true);
         }
 
