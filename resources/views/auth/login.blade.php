@@ -2,6 +2,7 @@
     <head>
         @vite('resources/css/app.css')
         <title>ورود به سیستم اتوماسیون</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
@@ -11,10 +12,10 @@
     </head>
     <body dir="rtl">
       @include('alerts')
-        <div class="flex h-full max-w-full grow-0">
+        <div class="flex justify-center h-full max-w-full grow-0">
             <div class="mt-16 flex justify-center items-center">
               <form method="POST" action="{{route('login')}}"
-                class="w-[450px] py-4 flex flex-col justify-center items-center rounded-xl"
+                class="w-auto md:w-[450px] py-4 flex flex-col justify-center items-center rounded-xl"
               >
               @csrf
                 <h1 class="text-4xl text-primary my-8">ورود به سیستم</h1>
@@ -38,18 +39,18 @@
               </form>
             </div>
 
-              <div class="swiper invisible lg:visible">
+              <div class="swiper hidden lg:block">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
                   <!-- Slides -->
-                  <div class="swiper-slide bg-red-400">
-                    <img class="bg-contain min-h-screen" src="{{ asset('1.jpg') }}">
+                  <div class="swiper-slide">
+                    <img class="bg-contain w-full min-h-screen" src="{{ asset('1.jpg') }}">
                   </div>
-                  <div class="swiper-slide bg-green-400">
-                    <img class="bg-contain min-h-screen" src="{{ asset('2.jpg') }}">
+                  <div class="swiper-slide">
+                    <img class="bg-contain w-full min-h-screen" src="{{ asset('2.jpg') }}">
                   </div>
-                  <div class="swiper-slide bg-cyan-400">
-                    <img class="bg-contain min-h-screen" src="{{ asset('3.jpg') }}">
+                  <div class="swiper-slide">
+                    <img class="bg-contain w-full min-h-screen" src="{{ asset('3.jpg') }}">
                   </div>
                   ...
                 </div>

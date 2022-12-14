@@ -2,19 +2,19 @@
     <head>
         @vite('resources/css/app.css')
         <title>ثبت نام</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
         />
-
         <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     </head>
     <body dir="ltr">
       @include('alerts')
-        <div class="flex h-full max-w-full grow-0">
+        <div class="flex justify-center h-full max-w-full grow-0">
             <div class="mt-16 flex justify-center items-center">
               <form method="POST" action="{{route('register')}}"
-                class="w-[450px] w-full py-4 flex flex-col justify-center items-center rounded-xl"
+                class="w-auto md:w-[450px] py-4 flex flex-col justify-center items-center rounded-xl"
               >
               @csrf
                 <h1 class="text-4xl text-primary my-8"> ثبت نام</h1>

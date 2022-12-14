@@ -8,7 +8,7 @@
             <div class="w-14 h-14 rounded-full bg-cyan-400">
               <img class="w-full h-full bg-center rounded-full" src="{{ url('storage/avatars/' . Auth::user()->id )}}">
             </div>
-            <div class="flex flex-col items-start px-4">
+            <div class="flex flex-col full truncate items-start px-4">
             <span class="text-xl">{{ Auth::user()->info?->firstname }} {{ Auth::user()->info?->lastname}}</span>
             <span class="text-sm">
               @if (Auth::user()->role == 1)
