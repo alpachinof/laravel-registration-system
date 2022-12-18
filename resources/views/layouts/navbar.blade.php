@@ -30,9 +30,18 @@
             </div>
             </a>
 
-          <div class="text-right">
+          <div id="title">
+            <button type="button" class="w-full p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600">
+               مدیریت کاربران
+              <!-- Heroicon name: mini/chevron-down -->
+              <svg class="ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+              </svg>
+            </button>
+            </div>
+          <div class="text-right menu hidden">
             <div id="title">
-              <button type="button" class="w-full p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600">
+              <button type="button" class="w-full px-6 p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600">
                 اطلاعات کارمندان
                 <!-- Heroicon name: mini/chevron-down -->
                 <svg class="ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -44,17 +53,39 @@
             <div class="menu hidden flex flex-col items-start rounded-md px-4 duration-300 cursor-pointer">
               <div class="w-full py-1">
                 <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-                <a href="/employee/create" class="block py-2 w-full rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-0">ثبت اطلاعات کارمندی</a>
-                <a href="/employee" class="block py-2 w-full rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-1">لیست کارمندان</a>
+                <a href="/employee/create" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-0">ثبت اطلاعات کارمندی</a>
+                <a href="/employee" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-1">لیست کارمندان</a>
+              </div>
+            </div>
+
+            <div class="text-right">
+              <div id="title">
+                <button type="button" class="w-full px-6 p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600">
+                  اطلاعات دانشجویان
+                  <!-- Heroicon name: mini/chevron-down -->
+                  <svg class="ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+              </div>
+            
+              <div class="menu hidden flex flex-col items-start rounded-md px-4 duration-300 cursor-pointer">
+                <div class="w-full py-1">
+                  <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                  <a href="#" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-0">ثبت نام دانشجو</a>
+                  <a href="#" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-1">لیست دانشجویان</a>
+                  <a href="#" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-2">گزارش صندوق ثبت نام</a>
+                  <a href="#" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-2">گزارش ثبت نام روزانه</a>
+                </div>
               </div>
             </div>
           </div>
-
+          
 
           <div class="text-right">
             <div id="title">
               <button type="button" class="w-full p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600">
-                اطلاعات دانشجویان
+              اساتید
                 <!-- Heroicon name: mini/chevron-down -->
                 <svg class="ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                   <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
@@ -65,18 +96,26 @@
             <div class="menu hidden flex flex-col items-start rounded-md px-4 duration-300 cursor-pointer">
               <div class="w-full py-1">
                 <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-                <a href="#" class="block py-2 w-full rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-0">ثبت اطلاعات کارمندی</a>
-                <a href="#" class="block py-2 w-full rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-1">اطلاعات کارمندان</a>
+                <a href="#" class="block py-2 w-full rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-0">ثبت نام</a>
+                <a href="#" class="block py-2 w-full rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-1">لیست اساتید</a>
                 <a href="#" class="block py-2 w-full rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-2">درباره</a>
               </div>
             </div>
           </div>
 
-
-          <div class="text-right">
+          <div id="title">
+            <button type="button" class="w-full p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600">
+              گزارشات
+              <!-- Heroicon name: mini/chevron-down -->
+              <svg class="ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+              </svg>
+            </button>
+            </div>
+          <div class="text-right menu hidden">
             <div id="title">
-              <button type="button" class="w-full p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600">
-                حساب کاربری
+              <button type="button" class="w-full px-6 p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600">
+                 گزارشات مالی
                 <!-- Heroicon name: mini/chevron-down -->
                 <svg class="ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                   <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
@@ -87,9 +126,61 @@
             <div class="menu hidden flex flex-col items-start rounded-md px-4 duration-300 cursor-pointer">
               <div class="w-full py-1">
                 <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-                <a href="#" class="block py-2 w-full rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-0">تنظیمات</a>
-                <a href="#" class="block py-2 w-full rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-1">زبان</a>
-                <a href="#" class="block py-2 w-full rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-2">درباره</a>
+                <a href="/employee/create" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-0">گزارشات مالی اساتید</a>
+                <a href="/employee" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-1">گزارشات چک</a>
+                <a href="/employee" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-1">تعداد دانشجویان هر واحد</a>
+                <a href="/employee" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-1">دانشجویان بدهکار</a>
+              </div>
+            </div>
+          </div>
+
+
+          <div id="title">
+            <button type="button" class="w-full p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600">
+              مدیریت اطلاعات پایه
+              <!-- Heroicon name: mini/chevron-down -->
+              <svg class="ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+              </svg>
+            </button>
+            </div>
+          <div class="text-right menu hidden">
+            <div id="title">
+              <button type="button" class="w-full px-6 p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600">
+                 مدیریت ترم های تحصیلی
+                <!-- Heroicon name: mini/chevron-down -->
+                <svg class="ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+          
+            <div class="menu hidden flex flex-col items-start rounded-md px-4 duration-300 cursor-pointer">
+              <div class="w-full py-1">
+                <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                <a href="/employee/create" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-0">ایجاد ترم</a>
+                <a href="/employee" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-1">لیست ترم ها</a>
+              </div>
+            </div>
+
+            <div class="text-right">
+              <div id="title">
+                <button type="button" class="w-full px-6 p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600">
+                  تعریف جزيیات سطح
+                  <!-- Heroicon name: mini/chevron-down -->
+                  <svg class="ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+              </div>
+            
+              <div class="menu hidden flex flex-col items-start rounded-md px-4 duration-300 cursor-pointer">
+                <div class="w-full py-1">
+                  <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                  <a href="#" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-0">لیست تخفیف ها</a>
+                  <a href="#" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-1">لیست بانک ها</a>
+                  <a href="#" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-2">لیست مکان های برگزاری</a>
+                </div>
               </div>
             </div>
           </div>
