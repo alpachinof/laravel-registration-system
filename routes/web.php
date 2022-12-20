@@ -4,19 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\employee;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\panel;
 
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::middleware('auth')->controller(panel::class)->group(function () {
     Route::get('/', 'index');
@@ -52,5 +43,15 @@ Route::middleware('auth')->prefix('employee')->controller(employee::class)->grou
     Route::get('/{id}', 'edit');
     Route::post('/{id}', 'update');
     Route::get('/delete/{id}', 'delete')->name('delete');
+
+});
+
+Route::middleware('auth')->prefix('student')->controller(StudentController::class)->group(function () {
+    Route::get('/', 'index');
+    // Route::get('/create', 'create')->name('create');
+    // Route::post('/store', 'store')->name('store');
+    // Route::get('/{id}', 'edit');
+    // Route::post('/{id}', 'update');
+    // Route::get('/delete/{id}', 'delete')->name('delete');
 
 });
