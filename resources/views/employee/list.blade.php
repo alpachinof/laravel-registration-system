@@ -31,10 +31,7 @@
                 <th scope="col" class="py-3 px-6">
                     نام خانوادگی
                 </th>
-                <th scope="col" class="py-3 px-6">
-                    عملیات
-                </th>
-                <th scope="col" class="py-3 px-6">
+                <th scope="col" class="py-3 px-6 text-center">
                     عملیات
                 </th>
             </tr>
@@ -48,11 +45,9 @@
                     <td class="py-4 px-6">
                         {{$info->lastname}}
                     </td>
-                    <td class="py-4 px-6">
-                        <a href="/employee/{{$info->user_id}}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">ویرایش</a>
-                    </td>
-                    <td class="py-4 px-6">
-                        <a href="#" id="delete" data-id="{{$info->user_id}}" class="font-medium text-red-600 dark:text-blue-500 hover:underline">حذف</a>
+                    <td class="py-4 px-6 text-center">
+                        <a href="/employee/{{$info->user_id}}" class="w-16 h-6 bg-green-600 p-2.5 rounded-md font-medium text-white">ویرایش</a>
+                        <a href="#" id="delete" data-id="{{$info->user_id}}" class="w-16 h-6 bg-red-600 p-2.5 rounded-md font-medium text-white">حذف</a>
                     </td>
                 </tr>
             @empty
