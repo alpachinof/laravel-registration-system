@@ -48,9 +48,9 @@ Route::middleware('auth')->prefix('employee')->controller(employee::class)->grou
 
 Route::middleware('auth')->prefix('student')->controller(StudentController::class)->group(function () {
     Route::get('/', 'index');
-    // Route::get('/create', 'create')->name('create');
-    // Route::post('/store', 'store')->name('store');
-    // Route::get('/{id}', 'edit');
+    Route::get('/create', 'create');
+    Route::post('/store', 'store');
+    Route::get('/{id}', 'edit');
     // Route::post('/{id}', 'update');
     // Route::get('/delete/{id}', 'delete')->name('delete');
 

@@ -11,7 +11,7 @@
 @section('content')
 <body>
     @include('alerts')
-<div class="lg:mr-96 mt-16 px-4 relative shadow-md sm:rounded-lg">
+<div class="mt-16 px-4 relative shadow-md sm:rounded-lg">
     <form>   
         <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
         <div class="relative">
@@ -31,6 +31,9 @@
                 <th scope="col" class="py-3 px-6">
                     نام خانوادگی
                 </th>
+                <th scope="col" class="py-3 px-6">
+                    شماره دانشجویی
+                </th>
                 <th scope="col" class="py-3 px-6 text-center">
                     عملیات
                 </th>
@@ -44,6 +47,9 @@
                     </th>
                     <td class="py-4 px-6">
                         {{$student->lastname}}
+                    </td>
+                    <td class="py-4 px-6">
+                        {{$student->student_id}}
                     </td>
                     <td class="py-4 px-6 text-center">
                         <a href="/student/{{$student->id}}" class="w-16 h-6 bg-green-600 p-2.5 rounded-md font-medium text-white">ویرایش</a>
@@ -60,3 +66,4 @@
 
 </body>
 </html>
+@endsection

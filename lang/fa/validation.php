@@ -40,6 +40,7 @@ return [
         'birthplace' => 'محل تولد',
         'address' => 'آدرس',
         'profile_pic' => 'آواتار',
+        'national_code' => 'کد ملی'
 
     ]
 ];

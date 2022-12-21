@@ -19,7 +19,7 @@
 @endif
 
 @if (session()->has('created'))
-<div id="swal" data-status="success" data-title="اطلاعات شما با موفقیت ثبت شد" class="hidden">
+<div id="swal" data-status="success" data-title="اطلاعات با موفقیت ثبت شد" class="hidden">
 </div>
 @endif
 
