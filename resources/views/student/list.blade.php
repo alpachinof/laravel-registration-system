@@ -66,4 +66,32 @@
 
 </body>
 </html>
+
+<script>
+    const deletebtn = document.querySelectorAll('[id=delete]');
+    
+    deletebtn.forEach((deletebtn, index) => {
+          deletebtn.addEventListener("click", () => {
+            const id = deletebtn.dataset.id;
+            Swal.fire({
+                title: 'حذف دانشجو',
+                text: "دانشجو از سیستم حذف شود؟",
+                icon: 'warning',
+                showCancelButton: true,
+                cancelButtonText: 'انصراف',
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'حذف'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    fetch(`/student/delete/${id}`);
+                    location.reload();
+                }
+                })
+          })
+        })
+    
+    
+    
+    </script>
 @endsection

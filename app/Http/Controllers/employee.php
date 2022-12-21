@@ -52,12 +52,7 @@ class employee extends Controller
 
         return redirect('/employee')->with('updated', true);
     }
-
-    public function delete(Request $request, $id){
-        DB::table('users')->where('id', '=', $id)->delete();
-        return redirect('/employee')->with('deleted', true);
-    }
-    
+   
 
 
     public function store(Request $request){
@@ -113,6 +108,13 @@ class employee extends Controller
         }
 
     }
+
+
+    public function delete(Request $request, $id){
+        DB::table('users')->where('id', '=', $id)->delete();
+        return redirect('/employee')->with('deleted', true);
+    }
+    
 
     protected function validateForm(Request $request){
         $request->validate([

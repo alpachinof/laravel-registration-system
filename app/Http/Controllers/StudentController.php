@@ -42,6 +42,27 @@ class StudentController extends Controller
         return view('student.edit', compact('student'));
     }
 
+    public function update(Request $request, $id){
+        DB::table('students')
+            ->where('id', $id)
+            ->update([
+                'firstname' => $request['firstname'],
+                'lastname' => $request['lastname'],
+                'national_code' => $request['national_code'],
+                'birthdate' => $request['birthdate'],
+                'birthplace' => $request['birthplace'],
+                'degree' => $request['degree'],
+                'address' => $request['address'],
+        ]);
+
+        return redirect('/student')->with('updated', true);
+    }
+
+
+    public function delete(Request $request, $id){
+        DB::table('students')->where('id', '=', $id)->delete();
+        return redirect('/student')->with('deleted', true);
+    }
 
 
     protected function validateForm(Request $request){

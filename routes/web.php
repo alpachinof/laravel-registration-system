@@ -52,8 +52,8 @@ Route::middleware('auth')->prefix('student')->controller(StudentController::clas
     Route::get('/create', 'create');
     Route::post('/store', 'store');
     Route::get('/{id}', 'edit');
-    // Route::post('/{id}', 'update');
-    // Route::get('/delete/{id}', 'delete')->name('delete');
+    Route::post('/{id}', 'update');
+    Route::get('/delete/{id}', 'delete');
 
 });
 

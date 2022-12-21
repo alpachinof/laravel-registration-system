@@ -42,11 +42,11 @@
                     <div class="col-span-6 sm:col-span-4">
                         <label for="degree" class="block text-sm font-medium text-gray-700">مدرک تحصیلی</label>
                         <select id="degree" name="degree" class="h-10 mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                          <option value="diploma">دیپلم</option>
-                          <option value="associate">کاردانی</option>
-                          <option value="bachlor">کارشناسی</option>
-                          <option value="graduate">ارشد</option>
-                          <option value="professional">دکترا</option>
+                          <option {{($user[0]->degree)=="diploma"? 'selected':''}} value="diploma">دیپلم</option>
+                          <option {{($user[0]->degree)=="associate"? 'selected':''}} value="associate">کاردانی</option>
+                          <option {{($user[0]->degree)=="bachlor"? 'selected':''}} value="bachlor">کارشناسی</option>
+                          <option {{($user[0]->degree)=="graduate"? 'selected':''}} value="graduate">ارشد</option>
+                          <option {{($user[0]->degree)=="professional"? 'selected':''}} value="professional">دکترا</option>
                         </select>
                       </div>
       
