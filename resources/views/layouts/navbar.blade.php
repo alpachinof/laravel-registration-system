@@ -85,7 +85,7 @@
           <div class="text-right">
             <div id="title">
               <button type="button" class="w-full p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600">
-              اساتید
+              ثبت نام
                 <!-- Heroicon name: mini/chevron-down -->
                 <svg class="ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                   <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
@@ -96,9 +96,8 @@
             <div class="menu hidden flex flex-col items-start rounded-md px-4 duration-300 cursor-pointer">
               <div class="w-full py-1">
                 <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-                <a href="#" class="block py-2 w-full rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-0">ثبت نام</a>
-                <a href="#" class="block py-2 w-full rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-1">لیست اساتید</a>
-                <a href="#" class="block py-2 w-full rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-2">درباره</a>
+                <a href="#" class="block py-2 w-full rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-0">دروس</a>
+                <a href="/lecturer" class="block py-2 w-full rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-1">اساتید</a>
               </div>
             </div>
           </div>
