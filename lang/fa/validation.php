@@ -40,7 +40,10 @@ return [
         'birthplace' => 'محل تولد',
         'address' => 'آدرس',
         'profile_pic' => 'آواتار',
-        'national_code' => 'کد ملی'
+        'national_code' => 'کد ملی',
+        'site' => 'ساختمان',
+        'room' => 'شماره اتاق',
+
 
     ]
 ];
