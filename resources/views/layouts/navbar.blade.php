@@ -176,7 +176,7 @@
               <div class="menu hidden flex flex-col items-start rounded-md px-4 duration-300 cursor-pointer">
                 <div class="w-full py-1">
                   <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-                  <a href="#" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-0">لیست تخفیف ها</a>
+                  <a href="/discount" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-0">لیست تخفیف ها</a>
                   <a href="#" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-1">لیست بانک ها</a>
                   <a href="/location" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-2">لیست مکان های برگزاری</a>
                 </div>

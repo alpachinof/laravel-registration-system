@@ -11,7 +11,8 @@ return [
     'confirmed' => ':attribute مطابقت ندارد.',
     'max' => [
         'string' => ':attribute حداکثر باید :max کاراکتر باشد.',
-        'integer' => ':attribute باید حداکثر :max عدد باشد.'
+        'integer' => ':attribute باید حداکثر :max عدد باشد.',
+        'numeric' => ':attribute نباید از :max بیشتر باشد',
     ],
     'min' => [
         'string' => ':attribute باید حداقل :min کاراکتر باشد.'
@@ -43,6 +44,9 @@ return [
         'national_code' => 'کد ملی',
         'site' => 'ساختمان',
         'room' => 'شماره اتاق',
+        'percent' => 'درصد',
+        'expiration' => 'انقضا',
+
 
 
     ]

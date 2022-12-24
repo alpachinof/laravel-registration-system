@@ -7,6 +7,7 @@ use App\Http\Controllers\employee;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\LecturerController;
 use App\Http\Controllers\LocationController;
+use App\Http\Controllers\DiscountController;
 use App\Http\Controllers\panel;
 
 
@@ -74,6 +75,16 @@ Route::middleware('auth')->prefix('location')->controller(LocationController::cl
     Route::post('/store', 'store');
     // Route::get('/{id}', 'edit');
     // Route::post('/{id}', 'update');
+    // Route::get('/delete/{id}', 'delete')->name('delete');
+
+});
+
+Route::middleware('auth')->prefix('discount')->controller(DiscountController::class)->group(function () {
+    Route::get('/', 'index');
+    Route::get('/create', 'create');
+    Route::post('/store', 'store');
+    Route::get('/{id}', 'edit');
+    Route::post('/{id}', 'update');
     // Route::get('/delete/{id}', 'delete')->name('delete');
 
 });

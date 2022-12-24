@@ -34,7 +34,7 @@ class LocationController extends Controller
     protected function validateForm(Request $request){
         $request->validate([
             'site' => ['required'],
-            'room' => ['required','numeric','digits:3'],
+            'room' => ['required','numeric','digits_between:1,3'],
 
         ]);
     }
