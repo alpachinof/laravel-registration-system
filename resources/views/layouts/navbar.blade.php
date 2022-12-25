@@ -157,8 +157,8 @@
             <div class="menu hidden flex flex-col items-start rounded-md px-4 duration-300 cursor-pointer">
               <div class="w-full py-1">
                 <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-                <a href="/employee/create" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-0">ایجاد ترم</a>
-                <a href="/employee" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-1">لیست ترم ها</a>
+                <a href="/semester/create" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-0">ایجاد ترم</a>
+                <a href="/semester" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-1">لیست ترم ها</a>
               </div>
             </div>
 
