@@ -9,6 +9,7 @@ use App\Http\Controllers\LecturerController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\DiscountController;
 use App\Http\Controllers\SemesterController;
+use App\Http\Controllers\CourseController;
 
 use App\Http\Controllers\panel;
 
@@ -97,6 +98,16 @@ Route::middleware('auth')->prefix('semester')->controller(SemesterController::cl
     Route::post('/store', 'store');
     Route::get('/{id}', 'edit');
     Route::post('/{id}', 'update');
+    // Route::get('/delete/{id}', 'delete')->name('delete');
+
+});
+
+Route::middleware('auth')->prefix('course')->controller(CourseController::class)->group(function () {
+    Route::get('/', 'index');
+    // Route::get('/create', 'create');
+    // Route::post('/store', 'store');
+    // Route::get('/{id}', 'edit');
+    // Route::post('/{id}', 'update');
     // Route::get('/delete/{id}', 'delete')->name('delete');
 
 });

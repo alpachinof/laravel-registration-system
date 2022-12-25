@@ -13,8 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->smallInteger('role')->default(0)->after('password')->change();
+        Schema::table('courses', function (Blueprint $table) {
+            $table->time('start_time')->change();
+            $table->time('end_time')->change();
         });
     }
 
@@ -25,7 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-        });
+        //
     }
 };
