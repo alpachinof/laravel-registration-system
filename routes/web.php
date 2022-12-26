@@ -44,6 +44,7 @@ Route::get('dashboard',function(){
 
 Route::middleware('auth')->prefix('employee')->controller(employee::class)->group(function () {
     Route::get('/', 'index');
+    Route::get('/role/{role}', 'filter');
     Route::get('/create', 'create')->name('create');
     Route::post('/store', 'store')->name('store');
     Route::get('/{id}', 'edit');
@@ -66,6 +67,7 @@ Route::middleware('auth')->prefix('lecturer')->controller(LecturerController::cl
     Route::get('/', 'index');
     Route::get('/create', 'create');
     Route::post('/store', 'store');
+    Route::get('/{id}/courses', 'courses');
     // Route::get('/{id}', 'edit');
     // Route::post('/{id}', 'update');
     // Route::get('/delete/{id}', 'delete')->name('delete');
@@ -104,8 +106,8 @@ Route::middleware('auth')->prefix('semester')->controller(SemesterController::cl
 
 Route::middleware('auth')->prefix('course')->controller(CourseController::class)->group(function () {
     Route::get('/', 'index');
-    // Route::get('/create', 'create');
-    // Route::post('/store', 'store');
+    Route::get('/create', 'create');
+    Route::post('/store', 'store');
     // Route::get('/{id}', 'edit');
     // Route::post('/{id}', 'update');
     // Route::get('/delete/{id}', 'delete')->name('delete');

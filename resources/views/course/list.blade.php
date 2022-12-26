@@ -12,7 +12,7 @@
 <body>
     @include('alerts')
     <div class="relative mt-16">
-        <a href="/lecturer/create" class="text-white right-2.5 bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-3">ثبت استاد جدید</a>
+        <a href="/course/create" class="text-white right-2.5 bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-3">درس جدید</a>
     </div>
 <div class="mt-6 px-4 relative shadow-md sm:rounded-lg">
 
@@ -23,32 +23,41 @@
                     نام
                 </th>
                 <th scope="col" class="py-3 px-6">
-                    نام خانوادگی
+                    واحد
                 </th>
                 <th scope="col" class="py-3 px-6">
-                    سمت
+                    روز هفته
                 </th>
-                <th scope="col" class="py-3 px-6 text-center">
-                    عملیات
+                <th scope="col" class="py-3 px-6">
+                    ساعت شروع
+                </th>
+                <th scope="col" class="py-3 px-6">
+                    ساعت اتمام
                 </th>
             </tr>
         </thead>
         <tbody>
-            @forelse ($lecturers as $lecturer)
+            @forelse ($courses as $course)
                 <tr class="bg-white border-b text-gray-900">
                     <th scope="row" class="py-4 px-6 font-medium">
-                        {{$lecturer->firstname}}
+                        {{$course->name}}
                     </th>
                     <td class="py-4 px-6">
-                        {{$lecturer->lastname}}
+                        {{$course->unit}}
                     </td>
                     <td class="py-4 px-6">
-                        {{$lecturer->role}}
+                        {{$course->weekday}}
                     </td>
-                    <td class="py-4 px-6 text-center">
-                        <a href="/lecturer/{{$lecturer->id}}/courses" class="w-16 h-6 bg-green-600 p-2.5 rounded-md font-medium text-white">لیست دروس</a>
+                    <td class="py-4 px-6">
+                        {{$course->start_time}}
+                    </td>
+                    <td class="py-4 px-6">
+                        {{$course->end_time}}
+                    </td>
+                    {{-- <td class="py-4 px-6 text-center"> --}}
+                        {{-- <a href="/discount/{{$discount->id}}" class="w-16 h-6 bg-green-600 p-2.5 rounded-md font-medium text-white">ویرایش</a> --}}
                         {{-- <a href="#" id="delete" data-id="{{$student->id}}" class="w-16 h-6 bg-red-600 p-2.5 rounded-md font-medium text-white">حذف</a> --}}
-                    </td>
+                    {{-- </td> --}}
                 </tr>
             @empty
                 

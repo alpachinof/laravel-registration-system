@@ -18,9 +18,4 @@ class course extends Model
         'lecturer_id',
         'location_id',
     ];
-
-    protected $casts = [
-        'start_time' => 'datetime:H:i',
-        'end_time' => 'datetime:H:i',
-    ];
 }

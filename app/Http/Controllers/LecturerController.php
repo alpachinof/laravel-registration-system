@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Models\lecturer;
+use App\Models\course;
 use Illuminate\Http\Request;
 
 class LecturerController extends Controller
@@ -32,6 +33,11 @@ class LecturerController extends Controller
         ]);
 
         return redirect()->back()->with('created', true);
+    }
+
+    public function courses(Request $request, $id){
+        $courses = course::where('lecturer_id', $id)->get();
+        return view('course.list', compact('courses'));
     }
 
     protected function validateForm(Request $request){

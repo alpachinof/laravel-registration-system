@@ -13,18 +13,21 @@
     <body>
         @include('alerts')
         <div class="mt-16 px-4 flex justify-center lg:justify-start flex-wrap gap-4 w-full text-center">
-            <a href="/employee" class="w-full h-32 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md">
+
+            <a href="/employee/role/0" class="w-full h-32 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">کاربران ثبت نام</h5>
                     <span class="mb-2 font-bold text-gray-700">{{$registerusers}}</span>
             </a>
-            <div class="w-full h-32 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md">
+
+            <a href="/employee/role/1" class="w-full h-32 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">کاربران مدیر</h5>
             <span class="mb-3 font-bold text-gray-700">{{$admins}}</span>
-            </div>
-            <div class="w-full h-32 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md">
+            </a>
+
+            <a href="/employee/role/2" class="w-full h-32 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">کاربران اداری</h5>
             <span class="mb-3 font-bold text-gray-700">{{$officeusers}}</span>
-            </div>
+            </a>
 
             <a href="/student" class="w-full h-32 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">دانشجویان</h5>

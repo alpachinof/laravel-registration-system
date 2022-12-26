@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Student;
+use App\Models\semester;
 
 class StudentController extends Controller
 {
@@ -22,8 +23,12 @@ class StudentController extends Controller
 
         $this->validateForm($request);
 
+        $semester = semester::where('current', 1)->first();
+
+        $id = $semester->code . rand ( 10000000000 , 99999999999 );
+
         Student::create([
-            'student_id' => '18436578425684',
+            'student_id' => $id,
             'firstname' => $request['firstname'],
             'lastname' => $request['lastname'],
             'national_code' => $request['national_code'],

@@ -30,7 +30,7 @@
                     </div>
 
                     <div class="flex items-center gap-4 mb-4">
-                        <input name="current" type="checkbox" value="1" {{ $semester[0]->current == 1 ? 'checked' : '' }} class="w-8 h-8 text-blue-600 bg-gray-100 rounded border-gray-300">
+                        <input name="current" type="checkbox" value="1" {{ $semester[0]->current == 1 ? 'checked' : '' }} class="w-6 h-6 text-blue-600 bg-gray-100 rounded border-gray-300">
                         <label for="current" class="block text-sm font-medium text-gray-700">ترم فعلی</label>
                     </div>
       

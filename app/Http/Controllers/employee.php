@@ -19,6 +19,20 @@ class employee extends Controller
         $infos = user_info::search(request('search'))->paginate();
         return view('employee.list', compact('infos'));
     }
+    
+
+    public function filter(Request $request, $role){
+        // $infos = User::with('info')->where('role', $role)->get();
+        $role = $role;
+        $infos = DB::table('users')
+        ->join('user_infos', function ($join) use($role) {
+            $join->on('users.id', '=', 'user_infos.user_id')
+                 ->where('users.role', '=', $role);
+        })
+        ->get();
+        return view('employee.list', compact('infos'));
+    }
+
 
     public function edit(Request $request, $id){
         $user = user_info::where('user_id', $id)->get();
