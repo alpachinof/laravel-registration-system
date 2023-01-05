@@ -12,10 +12,12 @@ class course extends Model
     protected $fillable = [
         'name',
         'unit',
+        'price',
         'weekday',
         'start_time',
         'end_time',
         'lecturer_id',
         'location_id',
+        'semester_id',
     ];
 }

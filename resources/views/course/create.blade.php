@@ -29,7 +29,12 @@
                       <input type="number" name="unit" class="h-10 mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                     </div>
 
-                    <div class="col-span-6 sm:col-span-4">
+                    <div class="col-span-6 sm:col-span-3">
+                      <label for="price" class="block text-sm font-medium text-gray-700">شهریه</label>
+                      <input type="number" name="price" class="h-10 mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                    </div>
+
+                    <div class="col-span-6 sm:col-span-3">
                         <label for="weekday" class="block text-sm font-medium text-gray-700">روز هفته</label>
                         <select name="weekday" class="h-10 mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                           <option value="شنبه">شنبه</option>
@@ -52,6 +57,13 @@
                     </div>
 
                     <div class="col-span-6 sm:col-span-4">
+                      <label for="semester" class="block text-sm font-medium text-gray-700">ترم</label>
+                      <select name="semester" class="h-10 mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                        <option value="{{$semester->id}}">{{" سال " . $semester->year . " ترم " . $semester->semester}}</option>
+                      </select>
+                  </div>
+
+                    <div class="col-span-6 sm:col-span-3">
                         <label for="location" class="block text-sm font-medium text-gray-700">مکان برگزاری</label>
                         <select name="location" class="h-10 mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                             @foreach ($locations as $location)
@@ -60,7 +72,7 @@
                         </select>
                     </div>
 
-                    <div class="col-span-6 sm:col-span-4">
+                    <div class="col-span-6 sm:col-span-3">
                         <label for="lecturer" class="block text-sm font-medium text-gray-700">استاد درس</label>
                         <select name="lecturer" class="h-10 mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                             @foreach ($lecturers as $lecturer)

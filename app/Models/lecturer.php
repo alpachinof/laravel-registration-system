@@ -13,6 +13,7 @@ class lecturer extends Model
         'firstname',
         'lastname',
         'role',
+        'salary',
         'national_code',
         'birthdate',
         'degree',

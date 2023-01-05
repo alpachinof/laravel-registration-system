@@ -29,7 +29,7 @@
                       <input type="text" name="lastname" id="lastname" class="h-10 mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                     </div>
 
-                    <div class="col-span-6 sm:col-span-4">
+                    <div class="col-span-6 sm:col-span-3">
                         <label for="role" class="block text-sm font-medium text-gray-700">سمت</label>
                         <select id="role" name="role" class="h-10 mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                           <option value="مربی">مربی</option>
@@ -39,9 +39,14 @@
                         </select>
                       </div>
 
+                      <div class="col-span-6 sm:col-span-3">
+                        <label for="salary" class="block text-sm font-medium text-gray-700">حقوق</label>
+                        <input type="number" name="salary" class="h-10 mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                      </div>
+
                     <div class="col-span-6 sm:col-span-3">
                         <label for="national_code" class="block text-sm font-medium text-gray-700">کد ملی</label>
-                        <input type="number" name="national_code" id="national_code" class="h-10 mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                        <input type="number" name="national_code" class="h-10 mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                       </div>
 
                     <div class="col-span-6 sm:col-span-3">

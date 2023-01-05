@@ -7,6 +7,11 @@ const labels = [
     'April',
     'May',
     'June',
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
 ];
 
 const data = {
@@ -15,7 +20,7 @@ const data = {
         label: 'My First dataset',
         backgroundColor: 'rgb(255, 99, 132)',
         borderColor: 'rgb(255, 99, 132)',
-        data: [0, 10, 5, 2, 20, 30, 45],
+        data: [0, 10, 5, 2, 20, 30, 200],
     }]
 };
 
