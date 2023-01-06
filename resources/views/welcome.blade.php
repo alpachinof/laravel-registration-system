@@ -41,4 +41,13 @@
         </div>
     </body>
 </html>
+
+<script>
+const labels = {!! json_encode($courses->toArray()) !!};
+
+courses = labels.map(x => (x.courses_count));
+
+const lecturers = labels.map(x => (x.firstname + " " + x.lastname));
+
+</script>
 @endsection

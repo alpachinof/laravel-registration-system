@@ -20,4 +20,9 @@ class course extends Model
         'location_id',
         'semester_id',
     ];
+
+    public function lecturer()
+    {
+        return $this->belongsTo(lecturer::class);
+    }
 }

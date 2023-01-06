@@ -19,4 +19,9 @@ class lecturer extends Model
         'degree',
         'address',
     ];
+
+    public function courses()
+    {
+        return $this->hasMany(course::class);
+    }
 }
