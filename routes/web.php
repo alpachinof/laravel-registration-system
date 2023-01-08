@@ -10,6 +10,7 @@ use App\Http\Controllers\LocationController;
 use App\Http\Controllers\DiscountController;
 use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\BankController;
 
 
@@ -119,6 +120,16 @@ Route::middleware('auth')->prefix('course')->controller(CourseController::class)
 Route::middleware('auth')->prefix('bank')->controller(BankController::class)->group(function () {
     Route::get('/', 'index');
     Route::get('/create', 'create');
+    Route::post('/store', 'store');
+    // Route::get('/{id}', 'edit');
+    // Route::post('/{id}', 'update');
+    // Route::get('/delete/{id}', 'delete')->name('delete');
+
+});
+
+Route::middleware('auth')->prefix('schedule')->controller(ScheduleController::class)->group(function () {
+    Route::get('/', 'index');
+    // Route::get('/create', 'create');
     Route::post('/store', 'store');
     // Route::get('/{id}', 'edit');
     // Route::post('/{id}', 'update');

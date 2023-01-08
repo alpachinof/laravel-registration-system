@@ -22,7 +22,6 @@ class employee extends Controller
     
 
     public function filter(Request $request, $role){
-        // $infos = User::with('info')->where('role', $role)->get();
         $role = $role;
         $infos = DB::table('users')
         ->join('user_infos', function ($join) use($role) {

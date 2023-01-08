@@ -19,4 +19,9 @@ class Student extends Model
         'degree',
         'address',
     ];
+
+    public function schedule()
+    {
+        return $this->hasMany(schedule::class);
+    }
 }
