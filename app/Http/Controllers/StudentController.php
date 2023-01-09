@@ -27,7 +27,7 @@ class StudentController extends Controller
 
         $id = $semester->code . rand ( 10000000000 , 99999999999 );
 
-        Student::create([
+        $student = new Student([
             'student_id' => $id,
             'firstname' => $request['firstname'],
             'lastname' => $request['lastname'],
@@ -38,7 +38,11 @@ class StudentController extends Controller
             'address' => $request['address'],
         ]);
 
-        return redirect()->back()->with('created', true);
+        $student->save();
+        
+        $id = $student->id;
+
+        return redirect('/schedule/create')->with('id', $id);
     }
 
 

@@ -12,8 +12,7 @@ use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\BankController;
-
-
+use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\panel;
 
 
@@ -128,9 +127,19 @@ Route::middleware('auth')->prefix('bank')->controller(BankController::class)->gr
 });
 
 Route::middleware('auth')->prefix('schedule')->controller(ScheduleController::class)->group(function () {
-    Route::get('/', 'index');
-    // Route::get('/create', 'create');
-    Route::post('/store', 'store');
+    // Route::get('/', 'index');
+    Route::get('/create', 'create')->name('schedule');
+    Route::post('/store/{id}', 'store');
+    // Route::get('/{id}', 'edit');
+    // Route::post('/{id}', 'update');
+    // Route::get('/delete/{id}', 'delete')->name('delete');
+
+});
+
+Route::middleware('auth')->prefix('transaction')->controller(TransactionController::class)->group(function () {
+    // Route::get('/', 'index');
+    Route::get('/create', 'create');
+    // Route::post('/store', 'store');
     // Route::get('/{id}', 'edit');
     // Route::post('/{id}', 'update');
     // Route::get('/delete/{id}', 'delete')->name('delete');

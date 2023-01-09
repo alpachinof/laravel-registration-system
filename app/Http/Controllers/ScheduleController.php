@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 
 class ScheduleController extends Controller
 {
-    public function index(){
+    public function create(){
         
         $semester = semester::where('current', 1)->first();
 
@@ -22,15 +22,15 @@ class ScheduleController extends Controller
         ->select('courses.*','lecturers.firstname','lecturers.lastname')
         ->get();
 
-        return view('schedule.list', compact('courses'));
+        return view('schedule.create', compact('courses'));
     }
 
 
-    public function store(Request $request){
+    public function store(Request $request, $id){
         $courses = $request->input('checkbox');
         foreach($courses as $course){
             schedule::create([
-                    'student_id' => 11,
+                    'student_id' => $id,
                     'course_id' => $course,
                 ]);
            }
