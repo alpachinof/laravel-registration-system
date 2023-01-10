@@ -139,7 +139,7 @@ Route::middleware('auth')->prefix('schedule')->controller(ScheduleController::cl
 Route::middleware('auth')->prefix('transaction')->controller(TransactionController::class)->group(function () {
     // Route::get('/', 'index');
     Route::get('/create', 'create');
-    // Route::post('/store', 'store');
+    Route::post('/store/{id}', 'store');
     // Route::get('/{id}', 'edit');
     // Route::post('/{id}', 'update');
     // Route::get('/delete/{id}', 'delete')->name('delete');

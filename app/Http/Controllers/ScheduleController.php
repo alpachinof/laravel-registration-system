@@ -27,20 +27,18 @@ class ScheduleController extends Controller
 
 
     public function store(Request $request, $id){
+
         $courses = $request->input('checkbox');
+
         foreach($courses as $course){
             schedule::create([
                     'student_id' => $id,
                     'course_id' => $course,
                 ]);
            }
-        // discount::create([
-        //     'name' => $request['name'],
-        //     'percent' => $request['percent'],
-        //     'expiration' => $request['expiration'],
 
-        // ]);
+           $models = course::findMany($courses);
 
-        // return redirect()->back()->with('created', true);
+        return redirect('/transaction/create')->with('models', $models)->with('id', $id);
     }
 }
