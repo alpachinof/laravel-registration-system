@@ -34,10 +34,15 @@
                 <span class="mb-3 font-bold text-gray-700">{{$students}}</span>
             </a>
 
-            <div style="width: 600px; margin: auto;">
+            <div class="flex flex-col lg:flex-row items-center justify-center w-full h-full">
+            <div class="w-full h-full">
                 <canvas id="myChart"></canvas>
             </div>
 
+            <div class="w-full h-full">
+                <canvas id="myChart2"></canvas>
+            </div>
+            </div>
         </div>
     </body>
 </html>
@@ -48,6 +53,13 @@ const labels = {!! json_encode($courses->toArray()) !!};
 courses = labels.map(x => (x.courses_count));
 
 const lecturers = labels.map(x => (x.firstname + " " + x.lastname));
+
+
+const labels2 = {!! json_encode($studentpercourses->toArray()) !!};
+
+students = labels2.map(x => (x.name));
+
+const courses2 = labels2.map(x => (x.count));
 
 </script>
 @endsection

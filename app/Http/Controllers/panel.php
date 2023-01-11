@@ -5,7 +5,7 @@ use App\Models\User;
 use App\Models\Student;
 use App\Models\lecturer;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 
 class panel extends Controller
 {
@@ -16,6 +16,20 @@ class panel extends Controller
         $officeusers = User::where('role', 2)->count();
         $students = Student::all()->count();
         $courses = lecturer::withCount('courses')->get();
-        return view('welcome', compact(['admins','registerusers','officeusers','students','courses']));
+
+        $studentpercourses = DB::table('schedules')
+        ->join('courses', 'schedules.course_id', '=', 'courses.id')
+        ->select('courses.name as name', DB::raw("count(schedules.course_id) as count"))
+        ->groupBy('schedules.course_id')
+        ->get();
+
+        return view('welcome', compact([
+            'admins',
+            'registerusers',
+            'officeusers',
+            'students',
+            'courses',
+            'studentpercourses'
+        ]));
     }
 }

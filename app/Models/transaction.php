@@ -14,7 +14,7 @@ class transaction extends Model
         'type',
         'amount',
         'debt',
-        'original_bank_id',
+        'origin_bank_id',
         'destination_bank_id',
         'due_date',
     ];
