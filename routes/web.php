@@ -13,6 +13,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\BankController;
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\panel;
 
 
@@ -140,6 +141,16 @@ Route::middleware('auth')->prefix('transaction')->controller(TransactionControll
     // Route::get('/', 'index');
     Route::get('/create', 'create');
     Route::post('/store/{id}', 'store');
+    // Route::get('/{id}', 'edit');
+    // Route::post('/{id}', 'update');
+    // Route::get('/delete/{id}', 'delete')->name('delete');
+
+});
+
+Route::middleware('auth')->prefix('report')->controller(ReportController::class)->group(function () {
+    Route::get('/debt', 'debt');
+    Route::get('/cheque', 'cheque');
+    // Route::post('/store/{id}', 'store');
     // Route::get('/{id}', 'edit');
     // Route::post('/{id}', 'update');
     // Route::get('/delete/{id}', 'delete')->name('delete');
