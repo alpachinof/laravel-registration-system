@@ -125,7 +125,7 @@
             <div class="menu hidden flex flex-col items-start rounded-md px-4 duration-300 cursor-pointer">
               <div class="w-full py-1">
                 <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-                <a href="/employee/create" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-0">گزارشات مالی اساتید</a>
+                <a href="/report/lecturer" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-0">گزارشات مالی اساتید</a>
                 <a href="/report/cheque" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-1">گزارشات چک</a>
                 <a href="/report/debt" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-1">دانشجویان بدهکار</a>
               </div>

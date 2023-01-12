@@ -150,6 +150,7 @@ Route::middleware('auth')->prefix('transaction')->controller(TransactionControll
 Route::middleware('auth')->prefix('report')->controller(ReportController::class)->group(function () {
     Route::get('/debt', 'debt');
     Route::get('/cheque', 'cheque');
+    Route::get('/lecturer', 'lecturer');
     // Route::post('/store/{id}', 'store');
     // Route::get('/{id}', 'edit');
     // Route::post('/{id}', 'update');

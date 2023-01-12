@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\transaction;
-
+use Carbon\Carbon;
 
 class ReportController extends Controller
 {
@@ -15,6 +15,7 @@ class ReportController extends Controller
         ->join('students', 'transactions.student_id', '=', 'students.id')
         ->select('students.firstname','students.lastname','students.student_id', DB::raw("SUM( transactions.debt ) AS debt"))
         ->groupBy('transactions.student_id')
+        ->where('debt', '>', '0')
         ->get();
 
         return view('report.debt', compact('debts'));
@@ -25,12 +26,21 @@ class ReportController extends Controller
         $cheques = DB::table('transactions')
         ->join('students', 'transactions.student_id', '=', 'students.id')
         ->select('students.firstname','students.lastname','students.student_id','transactions.debt','transactions.due_date')
-        ->groupBy('schedules.course_id')
-        ->whereDate('created_at', Carbon::today())
+        ->where('type', '=', 'چک')->whereBetween('due_date', [request('start'), request('end')])
         ->get();
 
-        dd($cheques);
+        return view('report.cheque', compact('cheques'));
+    }
 
-        // return view('report.cheque', compact('cheques'));
+    public function lecturer(){
+
+        $balances = DB::table('courses')
+        ->join('lecturers', 'courses.lecturer_id', '=', 'lecturers.id')
+        ->join('schedules', 'courses.id', '=', 'schedules.course_id')
+        ->select('lecturers.firstname','lecturers.lastname','lecturers.salary', DB::raw("SUM( courses.price ) AS income"))
+        ->groupBy('courses.lecturer_id')
+        ->get();
+
+        return view('report.lecturer', compact('balances'));
     }
 }
