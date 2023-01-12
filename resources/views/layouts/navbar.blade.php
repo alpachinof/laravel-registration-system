@@ -75,7 +75,7 @@
                   <a href="/student/create" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-0">ثبت نام دانشجو</a>
                   <a href="/student" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-1">لیست دانشجویان</a>
                   <a href="#" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-2">گزارش صندوق ثبت نام</a>
-                  <a href="#" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-2">گزارش ثبت نام روزانه</a>
+                  <a href="/student/dailyregister" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-2">گزارش ثبت نام روزانه</a>
                 </div>
               </div>
             </div>

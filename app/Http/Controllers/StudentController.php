@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Student;
 use App\Models\semester;
+use Carbon\Carbon;
 
 class StudentController extends Controller
 {
@@ -71,6 +72,18 @@ class StudentController extends Controller
     public function delete(Request $request, $id){
         DB::table('students')->where('id', '=', $id)->delete();
         return redirect('/student')->with('deleted', true);
+    }
+
+    public function dailyregister(){
+
+        $courses = DB::table('schedules')
+        ->join('courses', 'schedules.course_id', '=', 'courses.id')
+        ->select('courses.name', DB::raw("count(schedules.course_id) as count"))
+        ->groupBy('schedules.course_id')
+        ->whereDate('schedules.created_at', Carbon::today())
+        ->get();
+
+        return view('student.daily', compact('courses'));
     }
 
 

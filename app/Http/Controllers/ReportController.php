@@ -25,9 +25,12 @@ class ReportController extends Controller
         $cheques = DB::table('transactions')
         ->join('students', 'transactions.student_id', '=', 'students.id')
         ->select('students.firstname','students.lastname','students.student_id','transactions.debt','transactions.due_date')
-        ->where('type', '=', 'چک')->whereBetween('due_date', [request('start'), request('end')])
+        ->groupBy('schedules.course_id')
+        ->whereDate('created_at', Carbon::today())
         ->get();
 
-        return view('report.cheque', compact('cheques'));
+        dd($cheques);
+
+        // return view('report.cheque', compact('cheques'));
     }
 }

@@ -58,12 +58,12 @@ Route::middleware('auth')->prefix('employee')->controller(employee::class)->grou
 
 Route::middleware('auth')->prefix('student')->controller(StudentController::class)->group(function () {
     Route::get('/', 'index');
+    Route::get('/dailyregister', 'dailyregister');
     Route::get('/create', 'create');
     Route::post('/store', 'store');
     Route::get('/{id}', 'edit');
     Route::post('/{id}', 'update');
     Route::get('/delete/{id}', 'delete');
-
 });
 
 Route::middleware('auth')->prefix('lecturer')->controller(LecturerController::class)->group(function () {
