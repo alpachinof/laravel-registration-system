@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\discount;
 use App\Models\transaction;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class TransactionController extends Controller
 {
@@ -17,7 +18,10 @@ class TransactionController extends Controller
 
     public function create(){
 
-        $discounts = DB::table('discounts')->get();
+        $discounts = DB::table('discounts')
+        ->whereDate('expiration', '>', Carbon::today())
+        ->get();
+
         $banks = DB::table('banks')->get();
 
         return view('transaction.create', compact(['discounts','banks']));

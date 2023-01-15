@@ -34,32 +34,46 @@
                 <span class="mb-3 font-bold text-gray-700">{{$students}}</span>
             </a>
 
-            <div class="flex flex-col lg:flex-row items-center justify-center w-full h-full">
-            <div class="w-full h-full">
+            @admin
+            <div class="flex flex-col lg:flex-row flex-wrap items-center justify-center w-full h-full">
+            <div class="w-full max-w-sm h-full">
                 <canvas id="myChart"></canvas>
             </div>
 
-            <div class="w-full h-full">
+            <div class="w-full max-w-sm h-full">
                 <canvas id="myChart2"></canvas>
             </div>
+
+            <div class="w-full max-w-sm h-full">
+                <canvas id="myChart3"></canvas>
             </div>
+            </div>
+            @endadmin
         </div>
     </body>
 </html>
 
 <script>
+//lecturer's course count
 const labels = {!! json_encode($courses->toArray()) !!};
 
 courses = labels.map(x => (x.courses_count));
 
 const lecturers = labels.map(x => (x.firstname + " " + x.lastname));
 
-
+//student per course count
 const labels2 = {!! json_encode($studentpercourses->toArray()) !!};
 
 students = labels2.map(x => (x.name));
 
 const courses2 = labels2.map(x => (x.count));
+
+//students per semester
+const labels3 = {!! json_encode($studentpersemesters->toArray()) !!};
+
+semesters = labels3.map(x => (x.code));
+
+const students3 = labels3.map(x => (x.count));
 
 </script>
 @endsection

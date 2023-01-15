@@ -23,13 +23,22 @@ class panel extends Controller
         ->groupBy('schedules.course_id')
         ->get();
 
+        $studentpersemesters = DB::table('schedules')
+        ->join('courses', 'schedules.course_id', '=', 'courses.id')
+        ->join('semesters', 'courses.semester_id', '=', 'semesters.id')
+        ->select('semesters.code', DB::raw("count(DISTINCT schedules.student_id) as count"))
+        ->groupBy('courses.semester_id')
+        ->get();
+
+
         return view('welcome', compact([
             'admins',
             'registerusers',
             'officeusers',
             'students',
             'courses',
-            'studentpercourses'
+            'studentpercourses',
+            'studentpersemesters'
         ]));
     }
 }

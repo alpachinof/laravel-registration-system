@@ -102,6 +102,7 @@
             </div>
           </div>
 
+          @admin
           <div id="title">
             <button type="button" class="w-full p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600">
               گزارشات
@@ -131,7 +132,7 @@
               </div>
             </div>
           </div>
-
+          @endadmin
 
           <div id="title">
             <button type="button" class="w-full p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600">
@@ -161,6 +162,7 @@
               </div>
             </div>
 
+            @admin
             <div class="text-right">
               <div id="title">
                 <button type="button" class="w-full px-6 p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600">
@@ -181,6 +183,7 @@
                 </div>
               </div>
             </div>
+            @endadmin
           </div>
 
 

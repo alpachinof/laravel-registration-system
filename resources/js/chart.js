@@ -48,3 +48,26 @@ new Chart(
     document.getElementById('myChart2'),
     config2
 );
+
+const data3 = {
+    labels: semesters,
+    datasets: [{
+        label: 'دانشجویان ترم',
+        borderWidth: 2,
+        backgroundColor: 'rgb(154,208,245)',
+        borderColor: 'rgb(63,166,236)',
+        borderRadius:20,
+        data: students3,
+    }]
+};
+
+const config3 = {
+    type: 'bar',
+    data: data3,
+    options: {}
+};
+
+new Chart(
+    document.getElementById('myChart3'),
+    config3
+);

@@ -40,11 +40,6 @@ Route::get('/logout', function () {
 })->middleware('auth')->name('logout');
 
 
-Route::get('dashboard',function(){
-    return view('dashboard');
-})->middleware(['auth','admin']);
-
-
 Route::middleware('auth')->prefix('employee')->controller(employee::class)->group(function () {
     Route::get('/', 'index');
     Route::get('/role/{role}', 'filter');
@@ -77,7 +72,7 @@ Route::middleware('auth')->prefix('lecturer')->controller(LecturerController::cl
 
 });
 
-Route::middleware('auth')->prefix('location')->controller(LocationController::class)->group(function () {
+Route::middleware(['auth','admin'])->prefix('location')->controller(LocationController::class)->group(function () {
     Route::get('/', 'index');
     Route::get('/create', 'create');
     Route::post('/store', 'store');
@@ -87,7 +82,7 @@ Route::middleware('auth')->prefix('location')->controller(LocationController::cl
 
 });
 
-Route::middleware('auth')->prefix('discount')->controller(DiscountController::class)->group(function () {
+Route::middleware(['auth','admin'])->prefix('discount')->controller(DiscountController::class)->group(function () {
     Route::get('/', 'index');
     Route::get('/create', 'create');
     Route::post('/store', 'store');
@@ -117,7 +112,7 @@ Route::middleware('auth')->prefix('course')->controller(CourseController::class)
 
 });
 
-Route::middleware('auth')->prefix('bank')->controller(BankController::class)->group(function () {
+Route::middleware(['auth','admin'])->prefix('bank')->controller(BankController::class)->group(function () {
     Route::get('/', 'index');
     Route::get('/create', 'create');
     Route::post('/store', 'store');
@@ -147,7 +142,7 @@ Route::middleware('auth')->prefix('transaction')->controller(TransactionControll
 
 });
 
-Route::middleware('auth')->prefix('report')->controller(ReportController::class)->group(function () {
+Route::middleware(['auth','admin'])->prefix('report')->controller(ReportController::class)->group(function () {
     Route::get('/debt', 'debt');
     Route::get('/cheque', 'cheque');
     Route::get('/lecturer', 'lecturer');

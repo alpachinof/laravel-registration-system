@@ -149,7 +149,7 @@ select_element.addEventListener('change', (event) => {
   }
 });
 
-discount.addEventListener('change', (event) => {
+document.addEventListener('DOMContentLoaded', (event) => {
   const percent = discount.options[discount.selectedIndex].value;
   rawdiscount.value = Number(sum.value * percent) / 100;
   amount.value = Number(sum.value - rawdiscount.value);

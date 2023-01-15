@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use \Blade;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -26,5 +27,9 @@ class AppServiceProvider extends ServiceProvider
         // if($this->app->environment('production')) {
         //     \URL::forceScheme('https');
         // }
+
+        Blade::if('admin', function () {
+            return auth()->user()->role  == 1;
+        });
     }
 }
