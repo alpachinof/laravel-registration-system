@@ -30,6 +30,14 @@ class panel extends Controller
         ->groupBy('courses.semester_id')
         ->get();
 
+        $income = DB::table('transactions')
+        ->select( DB::raw("sum(transactions.amount) as income"))
+        ->get();
+        
+        $expense = DB::table('lecturers')
+        ->select( DB::raw("sum(lecturers.salary) as expense"))
+        ->get();
+       
 
         return view('welcome', compact([
             'admins',
@@ -38,7 +46,9 @@ class panel extends Controller
             'students',
             'courses',
             'studentpercourses',
-            'studentpersemesters'
+            'studentpersemesters',
+            'income',
+            'expense'
         ]));
     }
 }

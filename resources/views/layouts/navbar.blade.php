@@ -74,7 +74,7 @@
                   <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
                   <a href="/student/create" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-0">ثبت نام دانشجو</a>
                   <a href="/student" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-1">لیست دانشجویان</a>
-                  <a href="#" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-2">گزارش صندوق ثبت نام</a>
+                  <a href="/student/registerfund" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-2">گزارش صندوق ثبت نام</a>
                   <a href="/student/dailyregister" class="block py-2 w-full rounded-md px-6 duration-300 cursor-pointer hover:bg-blue-600" id="menu-item-2">گزارش ثبت نام روزانه</a>
                 </div>
               </div>
@@ -204,6 +204,7 @@
       </div>
     </div>
     <div class="lg:mr-96">
+      <a href="{{ url()->previous() }}" class="mt-16 inline-flex justify-center rounded-md border-2 bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm">بازگشت</a>
     @yield('content')
     </div>
   </div>

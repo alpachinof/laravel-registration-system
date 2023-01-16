@@ -25,6 +25,15 @@ return new class extends Migration
      */
     public function down()
     {
-    //
+        Schema::table('transactions', function (Blueprint $table) {
+            $table->dropForeign(['student_id']);
+            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade')->change();
+        });
+
+        Schema::table('schedules', function (Blueprint $table) {
+            $table->dropForeign(['student_id']);
+            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade')->change();
+
+        }); 
     }
 };

@@ -14,7 +14,7 @@
 <body dir="rtl">
   @include('alerts')
     <div class="mt-16">
-            <form action="/student/<?php echo $student[0]->id; ?>" enctype="multipart/form-data" method="POST">
+            <form action="/student/<?php echo $student[0]->id; ?>" method="POST">
               @csrf
               <div class="overflow-hidden shadow sm:rounded-md">
                 <div class="bg-white px-4 py-5 sm:p-6">
@@ -69,7 +69,6 @@
                 </div>
                 <div class="bg-gray-50 px-4 py-3 text-right sm:px-6">
                   <button type="submit" class="inline-flex justify-center rounded-md border-2 border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">ذخیره</button>
-                  <a href="{{ url()->previous() }}" class="inline-flex justify-center rounded-md border-2 border-indigo-600 py-2 px-4 text-sm font-medium text-indigo-600 shadow-sm">بازگشت</a>
                 </div>
               </div>
             </form>

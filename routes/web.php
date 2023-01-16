@@ -54,6 +54,7 @@ Route::middleware('auth')->prefix('employee')->controller(employee::class)->grou
 Route::middleware('auth')->prefix('student')->controller(StudentController::class)->group(function () {
     Route::get('/', 'index');
     Route::get('/dailyregister', 'dailyregister');
+    Route::get('/registerfund', 'registerfund');
     Route::get('/create', 'create');
     Route::post('/store', 'store');
     Route::get('/{id}', 'edit');

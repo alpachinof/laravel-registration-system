@@ -128,6 +128,8 @@
   </form>
 </body>
 </html>
+
+
 <script>
 const select_element = document.getElementById("type");
 const paid = document.getElementById("paid");

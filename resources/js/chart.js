@@ -71,3 +71,45 @@ new Chart(
     document.getElementById('myChart3'),
     config3
 );
+
+const data4 = {
+    labels: 'c',
+    datasets: [
+        {
+        label: 'جریان درآمد',
+        borderWidth: 2,
+        backgroundColor: 'rgb(154,208,245)',
+        borderColor: 'rgb(63,166,236)',
+        borderRadius:20,
+        data: incomes,
+    },
+    {
+        label: 'جریان مخارج',
+        borderWidth: 2,
+        backgroundColor: 'rgb(255,177,193)',
+        borderColor: 'rgb(255, 99, 132)',
+        borderRadius:20,
+        data: expenses,
+    }
+]
+};
+
+const config4 = {
+    type: 'bar',
+    data: data4,
+    options: {
+        scales: {
+            x: {
+              stacked: true,
+            },
+            y: {
+              stacked: true
+            }
+          }
+    }
+};
+
+new Chart(
+    document.getElementById('myChart4'),
+    config4
+);

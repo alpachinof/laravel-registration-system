@@ -47,6 +47,11 @@
             <div class="w-full max-w-sm h-full">
                 <canvas id="myChart3"></canvas>
             </div>
+
+            <div class="w-full max-w-sm h-full">
+                <canvas id="myChart4"></canvas>
+            </div>
+
             </div>
             @endadmin
         </div>
@@ -75,5 +80,12 @@ semesters = labels3.map(x => (x.code));
 
 const students3 = labels3.map(x => (x.count));
 
+//income and expense
+const income = {!! json_encode($income->toArray()) !!};
+const expense = {!! json_encode($expense->toArray()) !!};
+
+incomes = income.map(x => (x.income));
+
+expenses = expense.map(x => (x.expense));
 </script>
 @endsection

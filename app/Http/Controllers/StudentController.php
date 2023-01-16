@@ -87,6 +87,22 @@ class StudentController extends Controller
     }
 
 
+    public function registerfund(){
+
+        $courses = DB::table('schedules')
+        ->join('courses', 'schedules.course_id', '=', 'courses.id')
+        ->select('courses.name', DB::raw("count(schedules.course_id) as count"), DB::raw("SUM( courses.price ) AS income"),)
+        ->groupBy('schedules.course_id')
+        ->get();
+
+        $discount = DB::table('discounts')
+        ->whereDate('expiration', '>', Carbon::today())
+        ->first('percent');
+
+        return view('student.fund', compact(['courses','discount']));
+    }
+
+
     protected function validateForm(Request $request){
         $request->validate([
             'firstname' => ['required'],

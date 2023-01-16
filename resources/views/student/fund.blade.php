@@ -11,39 +11,36 @@
 @section('content')
 <body>
     @include('alerts')
-<div class="mt-16 px-4 relative shadow-md sm:rounded-lg">
-
+<div class="mt-16 px-4 ml-4 relative shadow-md sm:rounded-lg">
     <table class="w-full text-sm text-right text-gray-500">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50">
             <tr>
                 <th scope="col" class="py-3 px-6">
-                    نام
+                    درس
                 </th>
                 <th scope="col" class="py-3 px-6">
-                    حقوق
+                    مجموع ثبت نام
                 </th>
                 <th scope="col" class="py-3 px-6">
-                    دریافتی
-                </th>
-                <th scope="col" class="py-3 px-6">
-                    تفاوت
+                    درآمد
                 </th>
             </tr>
         </thead>
         <tbody>
-            @forelse ($balances as $balance)
+            @forelse ($courses as $course)
                 <tr class="bg-white border-b text-gray-900">
                     <th scope="row" class="py-4 px-6 font-medium">
-                        {{$balance->firstname . " " . $balance->lastname}}
+                        {{$course->name}}
                     </th>
                     <td class="py-4 px-6">
-                        {{$balance->salary}}
+                        {{$course->count}}
                     </td>
                     <td class="py-4 px-6">
-                        {{$balance->income * $discount->percent /10}}
+                        {{$course->income * $discount->percent / 10}}
                     </td>
-                    <td class="py-4 px-6">
-                        {{$balance->income - $balance->salary }}
+                    <td class="py-4 px-6 text-center">
+                        {{-- <a href="/discount/{{$discount->id}}" class="w-16 h-6 bg-green-600 p-2.5 rounded-md font-medium text-white">ویرایش</a> --}}
+                        {{-- <a href="#" id="delete" data-id="{{$student->id}}" class="w-16 h-6 bg-red-600 p-2.5 rounded-md font-medium text-white">حذف</a> --}}
                     </td>
                 </tr>
             @empty

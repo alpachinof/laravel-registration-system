@@ -41,6 +41,11 @@ class ReportController extends Controller
         ->groupBy('courses.lecturer_id')
         ->get();
 
-        return view('report.lecturer', compact('balances'));
+        $discount = DB::table('discounts')
+        ->whereDate('expiration', '>', Carbon::today())
+        ->first('percent');
+
+
+        return view('report.lecturer', compact(['balances','discount']));
     }
 }
