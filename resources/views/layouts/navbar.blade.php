@@ -1,12 +1,12 @@
 <div dir="rtl">
     <div
-      class="sidebar fixed top-0 bottom-0 right-[-300px] lg:right-0 duration-1000 p-2 w-[300px] overflow-y-auto text-center bg-gray-900 shadow h-screen"
+      class="fixed top-0 h-full right-[-300px] lg:right-0 duration-1000 p-2 w-[300px] overflow-y-auto text-center bg-gray-900"
     >
       <div class="text-gray-100 text-xl">
         <div>
           <div class="flex items-center p-4 rounded-md">
             <div class="w-14 h-14 rounded-full bg-cyan-400">
-              <img class="w-full h-full bg-center rounded-full" src="{{ url('storage/avatars/' . Auth::user()->id )}}">
+              <img class="object-cover w-full h-full bg-center rounded-full" src="{{ url('storage/avatars/' . Auth::user()->id )}}">
             </div>
             <div class="flex flex-col full truncate items-start px-4">
             <span class="text-xl">{{ Auth::user()->info?->firstname }} {{ Auth::user()->info?->lastname}}</span>
@@ -203,8 +203,10 @@
         </div>
       </div>
     </div>
-    <div class="lg:mr-96">
+    <div class="lg:mr-[370px]">
+      @if (!Request::is('/'))
       <a href="{{ url()->previous() }}" class="mt-16 inline-flex justify-center rounded-md border-2 bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm">بازگشت</a>
+      @endif
     @yield('content')
     </div>
   </div>

@@ -12,7 +12,7 @@
     </head>
     <body>
         @include('alerts')
-        <div class="mt-16 px-4 flex justify-center lg:justify-start flex-wrap gap-4 w-full text-center">
+        <div class="mt-16 px-4 flex justify-center lg:justify-center flex-wrap gap-4 w-full text-center">
 
             <a href="/employee/role/0" class="w-full h-32 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">کاربران ثبت نام</h5>
@@ -35,7 +35,7 @@
             </a>
 
             @admin
-            <div class="flex flex-col lg:flex-row flex-wrap items-center justify-center w-full h-full">
+            <div class="mt-12 flex flex-col lg:flex-row justify-center lg:justify-center flex-wrap gap-4 w-full h-full">
             <div class="w-full max-w-sm h-full">
                 <canvas id="myChart"></canvas>
             </div>

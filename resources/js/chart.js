@@ -9,7 +9,7 @@ const data = {
         borderWidth: 2,
         backgroundColor: 'rgb(255,177,193)',
         borderColor: 'rgb(255, 99, 132)',
-        borderRadius:20,
+        borderRadius:5,
         data: courses,
     }]
 };
@@ -33,7 +33,7 @@ const data2 = {
         borderWidth: 2,
         backgroundColor: 'rgb(154,208,245)',
         borderColor: 'rgb(63,166,236)',
-        borderRadius:20,
+        borderRadius:5,
         data: courses2,
     }]
 };
@@ -56,7 +56,7 @@ const data3 = {
         borderWidth: 2,
         backgroundColor: 'rgb(154,208,245)',
         borderColor: 'rgb(63,166,236)',
-        borderRadius:20,
+        borderRadius:5,
         data: students3,
     }]
 };
@@ -80,7 +80,7 @@ const data4 = {
         borderWidth: 2,
         backgroundColor: 'rgb(154,208,245)',
         borderColor: 'rgb(63,166,236)',
-        borderRadius:20,
+        borderRadius:5,
         data: incomes,
     },
     {
