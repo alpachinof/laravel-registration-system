@@ -3,12 +3,16 @@ this is my final year university project i did for about 2 month.i learned a lot
 
 ## screenshots
 login page
+
 ![login](screenshots//1.png)
 panel
+
 ![panel](screenshots//2.png)
 students
+
 ![students](screenshots//3.png)
 delete student
+
 ![delete student](screenshots//4.png)
 
 ## functionalities
